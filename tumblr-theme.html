@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+
+    <!-- Tumblr Theme configuration -->
+    <meta name="color:Background" content="#FFFFFF"/>
+    <meta name="color:Link" content="#0000FF"/>
+    <meta name="color:Link Hover" content="#FF0000"/>
+    <meta name="color:Link Visited" content="#800080"/>
+
+    <meta name="font:Site Font" content=""/>
+
+    <meta name="text:Footer Text" content=""/>
+    <meta name="text:Google Analytics ID" content=""/>
+
+    <meta name="image:Header" content=""/>
+
+    <meta name="if:Show Archive" content="1"/>
+    <meta name="if:Show RSS" content="0"/>
+    <meta name="if:Show Search" content="0"/>
+
+    <meta name="if:Use Time Ago" content="0"/>
+    <meta name="if:Use HighRes Photos" content="1"/>
+    <meta name="if:Use Number Pagination" content="0"/>
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <style type="text/css">
+      body, html {
+        background: #fff;
+        font-family: sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      header{
+        margin: 150px 0 150px 80px;
+      }
+      p{
+        color: #a4a4a4;
+      }
+      figure, figure a,figure a:hover  {
+        border-bottom: none;
+        padding: 0;
+        margin: 0;
+      }
+      figure img {
+        max-width: 100%;
+      }
+      figcaption{ 
+        margin: 100px;
+      }
+      footer{
+        margin: 0;
+      }
+      a{ 
+        color: #a4a4a4;
+        text-decoration: none;
+        border-bottom: 1px solid #a4a4a4;
+      }
+      a:hover{ 
+        border-bottom: 1px solid #6c6c6c;
+      }
+      a:visited{ 
+        border-bottom: 1px solid #ddd;
+      }
+
+      .hero {
+        background: #000;
+        margin: 0;
+        padding: 150px 0 150px 50px;
+      }
+
+      .hero h1 {
+        padding: 50px 0;
+        line-height: 120%;
+        margin: 0;
+        color: #fff;
+        font-weight: 400;
+        font-size: 12em;
+        font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+      }
+
+      .hero h2, .hero h3 {
+        text-align: left;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #a4a4a4;
+        line-height: 140%;
+        font-size: 1.6em;
+        font-weight: 100;
+        letter-spacing: 1px;
+      }
+
+      .hero h2 {
+        margin: 0;
+      }
+
+      .hero h3 {
+       font-size: 1.2em;
+       line-height: 170%;
+      }
+
+      .hero a, .hero a:visited  {
+        border-bottom: 1px solid #a4a4a4;
+        padding-bottom: 1px; 
+      }
+
+      .hero a:hover {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+
+      time a, time a:visited {
+        font-size: .8em
+        text-transform: uppercase;
+        color: #000;
+        font-weight: 100;
+        border-bottom: 1px solid #000;
+        margin: 150px 0 50px 50px;
+        display: inline-block;
+      }
+
+      time a:hover {
+        font-size: 1em;
+        color: #a4a4a4;
+        border-bottom: 1px solid #a4a4a4;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul.collaborators {
+        display: block;
+        max-width: 850px;
+        margin: 250px 0 550px 0;
+        padding-left: 50px;
+        font-size: 2em;
+        line-height: 150%;
+      }
+
+      ul.collaborators li {
+        margin: 0 10px 0 0;
+        float: left;
+      }
+
+      .notes {
+        display: none;
+      }
+
+      .menu ul {
+        font-size: .9em;
+        overflow: hidden;
+        background: #FF7500;
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+        padding: 20px;
+        line-height: 200%;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin: -45px 0 0 -45px;
+      }
+      
+      .menu ul li {
+        display: none;
+      }
+
+      .menu ul li.identity {
+        display: block;
+        position: absolute;
+        text-align: center;
+        font-size: 4em;
+        color: #000;
+        line-height: 50px;
+        padding-bottom: 50px;
+        left: 24px;
+      }
+
+      .menu a, .menu a:visited {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
+
+      .menu a:hover {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+      
+      .post.text {
+          max-width: 600px;
+          color: #000;
+          margin: 0 0 0 50px;
+      }
+      
+      .post.text header {
+          margin: 0;
+      }
+      
+      .post.text p {
+          color: #333;
+          font-size: 1.4em;
+          line-height: 160%;
+      }
+      
+      .post.text a {
+          color: #333;
+      }
+      
+      blockquote {
+          padding: 0;
+          margin: 0;
+      }
+      
+
+      @media only screen  
+        and (max-device-width : 1024px)  { 
+
+          .hero h2, .hero h3 {
+            text-align: left;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #a4a4a4;
+            line-height: 140%;
+            font-size: 2.2em;
+            font-weight: 200;
+            letter-spacing: 1px;
+          }
+
+           .hero h3 {
+            line-height: 180%;
+            font-size: 1.8em;
+          }
+
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <!-- <h1>empathetic<br>9–5pm</h1><h1>brutal<br>5–9am</h1> -->
+      <div class="menu">
+        <ul>
+          <!-- <li>MOMENTS</li>
+          <li>SCREENSHOTS</li>
+          <li>THOUGHTS</li> -->
+
+          <li class="identity">H</li>
+          <li><a href="https://sumall.com/">SumAll</a></li>
+          <li><a href="http://residebetter.com/">Reside</a></li>
+          <li><a href="http://brutallyearlyclub.com/">B.E.C.</a></li>
+          <li><a href="https://twitter.com/hoydb/">Twitter</a></li>
+          <li><a href="http://www.linkedin.com/pub/hoyd-breton/87/aa9/5b4">LinkedIn</a></li>
+          <li><a href="https://github.com/hoydb">GitHub</a></li>
+          <li><a href="mailto:hmbreton@gmail.com">Email</a></li>
+        </ul>
+      </div>
+      
+      <h2>
+        <span>Hoyd Breton,</span><br>
+        Brutal Product Designer,<br>
+      Working In Manhattan,<br>
+      Done With Overthinking.<br><br>
+    </h2>
+    <h3>
+      <a href="https://sumall.com/">I help entrepreneurs understand their data via SumAll</a>,<br/>
+      <a href="http://brutallyearlyclub.com/">I network product designers via Brutally Early Club</a>,<br/>
+      <a href="http://residebetter.com/">I delight friends monthly via Reside</a>.
+    </h3>
+    </div>
+    
+    <div id="wrapper">
+      <div id="main" role="main">
+        {block:Posts}
+        {block:Date}
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">
+                <a href="{Permalink}">
+                    process capture on {MonthNumberWithZero}.{DayOfMonthWithZero}.{ShortYear}
+                </a>
+              </time>
+              {/block:Date}
+
+        {block:Text}
+          <article class="post text">
+            {block:Title}
+            <header>
+              <h2 class="entry-title">{Title}</h2>
+            </header>
+            {/block:Title}
+            <p>
+              {Body}
+            </p>
+        {/block:Text}
+
+        {block:Photo}
+          <article class="post photo">
+            <figure>
+              {LinkOpenTag}
+                {block:IfUseHighResPhotos}
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                {/block:IfUseHighResPhotos}
+                {block:IfNotUseHighResPhotos}
+                  <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                {/block:IfNotUseHighResPhotos}
+              {LinkCloseTag}
+
+              {block:IfNotUseHighResPhotos}
+                {block:HighRes}
+                <a class="high-res" href="{PhotoURL-HighRes}">High-Res</a>
+                {/block:HighRes}
+              {/block:IfNotUseHighResPhotos}
+
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Photo}
+
+        {block:Photoset}
+          <article class="post photoset">
+            <figure>
+              {Photoset-500}
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Photoset}
+
+        {block:Quote}
+          <article class="post quote">
+            <blockquote>{Quote}</blockquote>
+            {block:Source}
+              <footer>{Source}</footer>
+            {/block:Source}
+        {/block:Quote}
+
+        {block:Link}
+          <article class="post link">
+            <header>
+              <h2>
+                <a href="{URL}" {Target}>{Name}</a>
+              </h2>
+            </header> 
+            {block:Description}
+            <p> {Description} </p>
+            {/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+          <article class="post chat">
+            {block:Title}
+            <header>
+              <h2>{Title}</h2>
+            </header>
+            {/block:Title}
+            <dialog>
+              {block:Lines}
+                {block:Label}
+                  <dt class="{Alt} {UserNumber}">
+                    {Label}
+                  </dt>
+                {/block:Label}
+                <dd> {Line} </dd>
+              {/block:Lines}
+            </dialog>
+        {/block:Chat}
+
+        {block:Audio}
+          <article class="post audio">
+            <header>
+              <h2>
+                {block:Artist}
+                  {Artist}
+                {/block:Artist}
+               
+                {block:TrackName}
+                  {TrackName}
+                {/block:TrackName}
+              </h2>
+            </header>
+            <figure>
+              {block:AlbumArt}
+                <img src="{AlbumArtURL}"/>
+              {/block:AlbumArt}
+
+              {block:AudioPlayer}
+                {AudioPlayer}
+              {/block:AudioPlayer} 
+
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Audio}
+
+        {block:Video}
+          <article class="post video">
+            <figure>
+              {Video-500}
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Video}
+
+        {block:Answer}
+          <article class="post answer">
+            <dialog>
+              <dt><img src="{AskerPortraitURL-16}"> {lang:Asker asked 2}: </dt>
+              <dd>{Question}</dd>
+
+              <dd>{Answer}</dd>
+            </dialog>
+        {/block:Answer}
+
+            <footer>
+              {block:NoteCount}
+                <!-- <div class="notes"><a href="{Permalink}">{lang:Notes}: {NoteCount}</a></div> -->
+              {/block:NoteCount}
+              {block:HasTags} 
+                <ul>
+                  {block:Tags}
+                  <li><a href="{TagURL}">#{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+              {/block:HasTags}
+
+              
+              
+              <!-- {block:NoteCount}
+                <a href="{Permalink}">{NoteCount}</a>
+              {/block:NoteCount}
+
+              {block:PermalinkPage}
+                {block:PostNotes}<div>{PostNotes}</div>{/block:PostNotes}
+              {/block:PermalinkPage}    -->
+            </footer>
+          </article>
+        {/block:Posts}
+      </div>
+      <footer>
+        {block:PermalinkPagination}
+          <nav>
+            {block:PreviousPost}<a href="{PreviousPost}">{lang:Previous}</a>{/block:PreviousPost} 
+            {block:NextPost}<a href="{NextPost}">{lang:Next}</a>{/block:NextPost} 
+          </nav>
+        {/block:PermalinkPagination}
+
+        {block:IndexPage}
+          {block:Pagination}
+            <nav>
+              {block:PreviousPage}<a href="{PreviousPage}">{lang:Newer}</a>{/block:PreviousPage}
+
+              {block:IfUseNumberPagination}
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}
+                        <span>{PageNumber}</span>
+                    {/block:CurrentPage}
+                    {block:JumpPage}
+                        <a href="{URL}">{PageNumber}</a>
+                    {/block:JumpPage}
+                {/block:JumpPagination}
+              {/block:IfUseNumberPagination}
+
+              {block:NextPage}<a href="{NextPage}">{lang:Older}</a>{/block:NextPage}
+            </nav>
+          {/block:Pagination}
+        {/block:IndexPage}
+        <p>{text:Footer Text}</p>
+      </footer>
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-16133171-9']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      $(function() {
+          $(".menu ul").hover(
+             function(){
+               $(".menu ul li.identity").stop().animate({top:'-150px'}, 200);
+               $(".menu ul li").not(".identity").stop().fadeIn();
+               $(".menu ul").stop().animate({height:'200px'}, 200);
+             },
+             function() {
+               $(".menu ul li.identity").stop().animate({top:'20px'}, 200);
+               $(".menu ul li").not(".identity").stop().fadeOut();
+               $(".menu ul").stop().animate({height:'50px'}, 200);
+             });
+      });
+    </script>
+    
+    <ul class="collaborators">
+        <li>Fantastic collaborators are</li>
+        <li><a href="https://twitter.com/lucaderosso">Luca De Rosso</a>,</li>
+        <li><a href="https://twitter.com/davinchew">Davin Chew</a>,</li>
+        <li>Phillip Yen,</li>
+        <li>and the rest of the SumAll team.</li>
+    </ul>
+    
+  </body>
+</html>
