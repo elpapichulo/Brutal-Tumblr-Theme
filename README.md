@@ -1,4 +1,4 @@
 Brutal-Tumblr-Theme
 =====================
 
-My very brutal tumblr theme, see examplhe here — http://hoydbreton.com/
+My very brutal Tumblr theme, see example here — http://hoydbreton.com/
