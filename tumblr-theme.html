@@ -141,10 +141,11 @@
       ul.collaborators {
         display: block;
         max-width: 850px;
-        margin: 250px 0 550px 0;
+        margin: 150px 0 550px 0;
         padding-left: 50px;
         font-size: 2em;
         line-height: 150%;
+        color: #a4a4a4;
       }
 
       ul.collaborators li {
@@ -232,9 +233,19 @@
       footer ul {
           line-height: 160%;
       }
+
+      footer li.note {
+        display: none;
+      }
       
-      @media only screen  
-        and (max-device-width : 1024px)  { 
+      nav a {
+          display: inline-block;
+          margin: 150px 0 0 50px;
+          color: #000;
+          font-size: 4em;
+      }
+      
+      @media only screen and (max-device-width : 1024px)  { 
 
           .hero h2, .hero h3 {
             text-align: left;
@@ -450,12 +461,12 @@
               <!-- 
               {block:NoteCount}
                 <a href="{Permalink}">{NoteCount}</a>
-              {/block:NoteCount}
+              {/block:NoteCount}  
+              -->
 
               {block:PermalinkPage}
                 {block:PostNotes}<div>{PostNotes}</div>{/block:PostNotes}
-              {/block:PermalinkPage}    
-              -->
+              {/block:PermalinkPage}  
 
             </footer>
           </article>
@@ -472,7 +483,7 @@
         {block:IndexPage}
           {block:Pagination}
             <nav>
-              {block:PreviousPage}<a href="{PreviousPage}">{lang:Newer}</a>{/block:PreviousPage}
+              {block:PreviousPage}<a href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
 
               {block:IfUseNumberPagination}
                 {block:JumpPagination length="5"}
@@ -485,7 +496,7 @@
                 {/block:JumpPagination}
               {/block:IfUseNumberPagination}
 
-              {block:NextPage}<a href="{NextPage}">{lang:Older}</a>{/block:NextPage}
+              {block:NextPage}<a href="{NextPage}">{lang:Next}</a>{/block:NextPage}
             </nav>
           {/block:Pagination}
         {/block:IndexPage}
@@ -522,8 +533,8 @@
     
     <ul class="collaborators">
         <li>Fantastic collaborators are</li>
-        <li><a href="https://twitter.com/lucaderosso">Luca De Rosso</a>,</li>
-        <li><a href="https://twitter.com/davinchew">Davin Chew</a>,</li>
+        <li><a href="http://www.linkedin.com/in/lucaderosso">Luca De Rosso</a>,</li>
+        <li><a href="http://www.linkedin.com/profile/view?id=2203232">Davin Chew</a>,</li>
         <li>Arron Bates,</li>
         <li>and the rest of the SumAll team.</li>
     </ul>
